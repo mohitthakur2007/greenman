@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenMan Nature Warriors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for smooth transitions */
+    .transition-fast {
+      transition: all 0.2s ease-in-out;
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-green-50 via-green-100 to-green-200 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="p-8 bg-gradient-to-r from-green-700 via-green-600 to-green-500 text-white text-center rounded-b-xl shadow-lg">
+    <h1 class="text-4xl font-extrabold tracking-tight text-yellow-300">Become a Nature Warrior with GreenMan</h1>
+    <p class="text-lg mt-3 text-yellow-200">Join our mission to preserve and protect the planet.</p>
+    <p class="mt-2 text-md font-light text-gray-200">We are stronger together, making a difference one step at a time.</p>
+  </header>
+
+  <!-- Main Section -->
+  <div class="flex justify-center items-center min-h-screen bg-gradient-to-b from-green-300 to-green-50">
+
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md text-center space-y-6 transition-fast border-2 border-green-500">
+      <h2 class="text-3xl font-semibold text-green-700">Sign up to become a Nature Warrior</h2>
+
+      <!-- Email Input -->
+      <input id="email" type="email" placeholder="Enter your email for updates"
+        class="p-4 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-lg shadow-md placeholder:text-gray-500">
+
+      <!-- Button to Become a Nature Warrior -->
+      <button id="warrior-btn"
+        class="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg transform transition-all duration-300 hover:bg-teal-500 hover:scale-110 focus:outline-none">
+        Become a Nature Warrior
+      </button>
+
+      <!-- Sticker Image Section (hidden initially) -->
+      <div id="sticker-section" class="mt-6 hidden">
+        <img id="sticker-image" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg" alt="Nature Warrior Sticker">
+        <a id="download-btn"
+          class="bg-yellow-400 text-white py-2 px-4 rounded-lg block mx-auto mt-4 hidden shadow-md transition-fast hover:bg-yellow-500"
+          download="nature-warrior-sticker.png">Download Your Sticker</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gradient-to-r from-green-700 via-green-600 to-green-500 text-white p-6 text-center mt-8">
+    <p class="text-sm">&copy; 2024 GreenMan. All rights reserved.</p>
+    <div class="mt-4 space-x-6">
+      <a href="#" class="text-white hover:text-gray-200 transition-all">Privacy Policy</a>
+      <a href="#" class="text-white hover:text-gray-200 transition-all">Terms of Service</a>
+      <a href="https://www.instagram.com/greenman" target="_blank" class="text-white hover:text-gray-200 transition-all">Instagram</a>
+      <a href="https://www.facebook.com/greenman" target="_blank" class="text-white hover:text-gray-200 transition-all">Facebook</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Array of sticker images in the 'stickers' directory
+    const stickers = [
+      'sticker1.png',
+      'sticker2.png',
+      'sticker3.png',
+    ];
+
+    // Function to display a random sticker image
+    function showRandomSticker() {
+      const randomIndex = Math.floor(Math.random() * stickers.length);
+      const stickerUrl = `stickers/${stickers[randomIndex]}`;
+      console.log('Random Sticker URL:', stickerUrl);  // Debugging line to log the URL
+
+      // Check if the image file exists (basic debugging)
+      const imgElement = document.getElementById('sticker-image');
+      imgElement.src = stickerUrl;
+
+      // Adding error handling for image load
+      imgElement.onload = function () {
+        console.log('Sticker Image Loaded Successfully');
+      };
+
+      imgElement.onerror = function () {
+        console.log('Error loading sticker image. Please check the path.');
+      };
+
+      // Show the sticker section and the download button
+      document.getElementById('sticker-section').classList.remove('hidden');
+      
+      // Show the download button and set up its download link
+      const downloadButton = document.getElementById('download-btn');
+      downloadButton.classList.remove('hidden');
+      downloadButton.setAttribute('download', 'nature-warrior-sticker.png');
+      downloadButton.setAttribute('href', stickerUrl);
+    }
+
+    // Function to handle the Nature Warrior button click
+    document.getElementById('warrior-btn').addEventListener('click', function () {
+      const email = document.getElementById('email').value;
+
+      if (email) {
+        // Log email (or send to your server for storage)
+        console.log('Email submitted:', email);
+
+        // Show the random sticker
+        showRandomSticker();
+      } else {
+        alert('Please enter your email to proceed!');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
