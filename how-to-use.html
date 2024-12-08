@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>🌱 Greenman - How to Use the Plant Kit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Styling for plant kit steps */
+    .step {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .step1 {
+      animation-delay: 0s;
+    }
+
+    .step2 {
+      animation-delay: 1s;
+    }
+
+    .step3 {
+      animation-delay: 2s;
+    }
+
+    .step4 {
+      animation-delay: 3s;
+    }
+
+    /* Fade and move animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover effect for images */
+    .hover-scale:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Header Section -->
+  <header class="py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold cursive">🌱 Greenman Plant Kit: Step-by-Step Guide</h1>
+    </div>
+  </header>
+
+  <!-- Plant Kit Animation Steps -->
+  <section class="bg-green-100 text-slate-700 py-20 px-4 sm:px-8">
+    <div class="container mx-auto text-center">
+
+      <!-- Step 1: Prepare the Pot -->
+      <div class="step step1">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 cursive">Step 1: Prepare the Pot</h2>
+        <p class="text-lg sm:text-xl mb-4">Take your plant pot (not included in the kit). Fill it with soil that you have on hand until it's about 2 inches from the top. Ensure the soil is even and well-packed to support the seed bomb.</p>
+        <img src="pot.jpg" alt="Prepare the Pot" class="w-40 mx-auto hover-scale">
+      </div>
+
+      <!-- Step 2: Place the Seed Bomb -->
+      <div class="step step2">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 cursive">Step 2: Place the Seed Bomb</h2>
+        <p class="text-lg sm:text-xl mb-4">Take the seed bomb provided in the kit and gently place it on the soil surface. Do not bury the seed bomb entirely; let it rest slightly on top with some soil sprinkled over it.</p>
+        <img src="seed bomb.jpeg" alt="Place the Seed Bomb" class="w-40 mx-auto hover-scale">
+      </div>
+
+      <!-- Step 3: Water the Plant Lightly -->
+      <div class="step step3">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 cursive">Step 3: Water the Plant Lightly</h2>
+        <p class="text-lg sm:text-xl mb-4">Water the pot gently. Use a small cup or watering can to moisten the soil and the seed bomb. Avoid overwatering to prevent seed damage. Maintain consistent moisture for healthy germination.</p>
+      </div>
+
+      <!-- Step 4: Apply Medicine and Place in a Well-Lit Spot -->
+      <div class="step step4">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 cursive">Step 4: Apply Medicine & Manure and  Place in a Well-Lit Spot</h2>
+        <p class="text-lg sm:text-xl mb-4">Mix the provided plant medicine with water as per the instructions in the kit. Spray or pour it gently into the pot to enhance growth and protect the plant from pests. Place the pot in a well-lit area that gets indirect sunlight for optimal growth.</p>
+        <img src="plant.jpg" alt="Apply Medicine and Place in Light" class="w-40 mx-auto hover-scale">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-green-800 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p class="cursive text-sm sm:text-base">&copy; 2024 Greenman. Sabke liye green future ka vaada! 🌱</p>
+    </div>
+  </footer>
+
+</body>
+</html>
